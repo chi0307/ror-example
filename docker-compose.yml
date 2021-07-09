@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  postgres:
+    container_name: postgres
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
+      # - 3000:3000
+    volumes:
+      - /Users/junchiwang/Desktop/Project/docker/postgres:/var/lib/postgresql/data
+    network_mode: bridge
+  # ruby:
+  #   container_name: ruby_project
+  #   build: .
+  #   command: sh -c "bundle install && rails server"
+  #   volumes:
+  #     - .:/usr/src/app
+  #   network_mode: service:postgres
