@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2021_07_10_093952) do
     t.string "condition_requirements"
     t.string "company_benefits"
     t.string "salary_range"
+    t.boolean "is_open", default: true
     t.bigint "company_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
