@@ -1,5 +1,5 @@
 <div class="profile">
-  <p class="title"><%= @company.title %></p>
+  <p class="profile-title"><%= @company.title %></p>
     <p class="detail detail-description">公司介紹</p>
     <p class="detail detail-content"><%= @company.profile %></p>
     <p class="detail detail-description">公司理念</p>
@@ -9,4 +9,11 @@
     <p class="detail detail-description">薪資福利</p>
     <p class="detail detail-content"><%= @company.salary_benefits %></p>
     <p class="detail detail-description">目前職缺</p>
+    <div class="list">
+      <% @company.jobs.each do |job| %>
+        <div class="list-item" onclick="location.href='/jobs/<%= job.id %>'">
+          <%= job.title %>
+        </div>
+      <% end %>
+    </div>
 </div>

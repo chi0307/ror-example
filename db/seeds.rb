@@ -50,3 +50,54 @@ companies = Company.create([
     salary_benefits: '薪資福利 6'
   },
 ]);
+
+jobs = Job.create([
+  {
+    title: '軟體工程師',
+    content: '打電腦',
+    condition_requirements: '有電腦可以打',
+    company_benefits: '有插座可以使用',
+    salary_range: '1000美金/月',
+    company_id: 1
+  },
+  {
+    title: '設計師',
+    content: '會設計',
+    condition_requirements: '有設計可以玩',
+    company_benefits: '有插座可以使用',
+    salary_range: '1000美金/月',
+    company_id: 1
+  },
+  {
+    title: '會計師',
+    content: '會算數',
+    condition_requirements: '有計算機',
+    company_benefits: '有插座可以使用',
+    salary_range: '1000美金/月',
+    company_id: 1
+  },
+  {
+    title: '軟體工程師',
+    content: '打電腦',
+    condition_requirements: '有電腦可以打',
+    company_benefits: '有插座可以使用',
+    salary_range: '1000美金/月',
+    company_id: 2
+  },
+  {
+    title: '設計師',
+    content: '會設計',
+    condition_requirements: '有設計可以玩',
+    company_benefits: '有插座可以使用',
+    salary_range: '1000美金/月',
+    company_id: 2
+  },
+  {
+    title: '會計師',
+    content: '會算數',
+    condition_requirements: '有計算機',
+    company_benefits: '有插座可以使用',
+    salary_range: '1000美金/月',
+    company_id: 2
+  }
+]);

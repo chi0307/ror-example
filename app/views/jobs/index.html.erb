@@ -1,0 +1,8 @@
+<p class="list-title">職缺列表</p>
+<div class="list">
+  <% @jobs.each do |job| %>
+    <div class="list-item" onclick="location.href='/jobs/<%= job.id %>'">
+      <%= job.title %>
+    </div>
+  <% end %>
+</div>

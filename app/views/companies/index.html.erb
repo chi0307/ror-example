@@ -1,7 +1,7 @@
-<p class="title">公司列表</p>
+<p class="list-title">公司列表</p>
 <div class="list">
   <% @companies.each do |company| %>
-    <div class="item" onclick="location.href='companies/<%= company.id %>'">
+    <div class="list-item" onclick="location.href='/companies/<%= company.id %>'">
       <%= company.title %>
     </div>
   <% end %>

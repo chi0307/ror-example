@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_10_082142) do
+ActiveRecord::Schema.define(version: 2021_07_10_093952) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,4 +25,17 @@ ActiveRecord::Schema.define(version: 2021_07_10_082142) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "jobs", force: :cascade do |t|
+    t.string "title"
+    t.string "content"
+    t.string "condition_requirements"
+    t.string "company_benefits"
+    t.string "salary_range"
+    t.bigint "company_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_id"], name: "index_jobs_on_company_id"
+  end
+
+  add_foreign_key "jobs", "companies"
 end
