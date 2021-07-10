@@ -10,7 +10,7 @@
     <p class="detail detail-content"><%= @company.salary_benefits %></p>
     <p class="detail detail-description">目前職缺</p>
     <div class="list">
-      <% @company.jobs.each do |job| %>
+      <% @company.jobs.select { |job| job.is_open }.each do |job| %>
         <div class="list-item" onclick="location.href='/jobs/<%= job.id %>'">
           <%= job.title %>
         </div>
