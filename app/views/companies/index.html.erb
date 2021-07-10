@@ -1,0 +1,8 @@
+<p class="title">公司列表</p>
+<div class="list">
+  <% @companies.each do |company| %>
+    <div class="item" onclick="location.href='companies/<%= company.id %>'">
+      <%= company.title %>
+    </div>
+  <% end %>
+</div>
