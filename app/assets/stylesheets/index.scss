@@ -1,0 +1,45 @@
+// Place all the styles related to the index controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.grid {
+  width: 100%;
+  border: solid 1px #000;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #e6e6e6;
+
+  &-title {
+    font-size: 26px;
+    margin-top: 10px;
+    margin-left: 10px;
+    display: inline;
+  }
+
+  &-more {
+    float: right;
+    font-size: 20px;
+    margin-top: 8px;
+    margin-right: 10px;
+  }
+
+  &-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &-item {
+    width: 18%;
+    height: 140px;
+    border-radius: 30px;
+    background-color: #fff;
+    border: solid 1px #000;
+    margin: 10px 1%;
+    cursor: pointer;
+  }
+
+  &-text {
+    line-height: 140px;
+    text-align: center;
+  }
+}

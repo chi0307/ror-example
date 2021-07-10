@@ -1,0 +1,27 @@
+<div class="grid">
+  <p class="grid-title">精選公司</p>
+  <a href="/companies" class="grid-more">更多公司</a>
+  <div class="grid-content">
+    <% @companies.sort_by {rand}[0...5].each do |company| %>
+      <div class="grid-item" onclick="location.href='/companies/<%= company.id %>'">
+        <p class="grid-text">
+          <%= company.title %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="grid">
+  <p class="grid-title">精選職缺</p>
+  <a href="/jobs" class="grid-more">更多職缺</a>
+  <div class="grid-content">
+    <% @jobs.sort_by {rand}[0...10].each do |job| %>
+      <div class="grid-item" onclick="location.href='/jobs/<%= job.id %>'">
+        <p class="grid-text">
+          <%= job.title %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+</div>
