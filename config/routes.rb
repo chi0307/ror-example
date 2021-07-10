@@ -7,4 +7,7 @@ Rails.application.routes.draw do
 
   get "/jobs", to: "jobs#index"
   get "/jobs/:id", to: "jobs#show"
+
+  get '/admin', to: 'admin#index'
+  get '/admin/company', to: 'admin#edit'
 end
