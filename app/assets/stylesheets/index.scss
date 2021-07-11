@@ -41,5 +41,8 @@
   &-text {
     line-height: 140px;
     text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
