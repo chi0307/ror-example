@@ -21,6 +21,33 @@
       cursor: pointer;
     }
 
+    .toggle-button {
+      position: absolute;
+      top: 24px;
+      right: 118px;
+      width: 50px;
+      height: 30px;
+      border-radius: 30px;
+      background-color: #e97161;
+
+      .toggle-circle {
+        background-color: #fff;
+        width: 26px;
+        height: 26px;
+        border-radius: 30px;
+        margin: 2px;
+        float: right;
+      }
+
+      &.open {
+        background-color: #84b956;
+
+        .toggle-circle {
+          float: left;
+        }
+      }
+    }
+
     .list-item .fa-trash-alt {
       padding: 24px;
       font-size: 30px;
