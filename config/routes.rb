@@ -17,5 +17,6 @@ Rails.application.routes.draw do
     post '/jobs/new', to: 'jobs#create', as: 'job_new'
     get '/jobs/:id', to: 'jobs#edit', as: 'job'
     patch '/jobs/:id', to: 'jobs#update'
+    delete '/jobs/:id', to: 'jobs#destroy', as: 'job_delete'
   end
 end

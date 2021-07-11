@@ -10,10 +10,15 @@
 <div class="admin-jobs">
   <div class="list">
     <% @jobs.each do |job| %>
-      <div class="list-item" onclick="location.href='/admin/jobs/<%= job.id %>'">
-        <%= job.title %>
-        <%= job.company_id %>
-        <%= job.is_open %>
+      <div class="list-item">
+        <div class="modify-item" onclick="location.href='/admin/jobs/<%= job.id %>'">
+          <%= job.title %>
+        </div>
+        <i class="fas fa-trash-alt">
+          <%= link_to "", admin_job_delete_path(job),
+          method: :delete,
+          data: { confirm: "Are you sure?" } %>
+        </i>
       </div>
     <% end %>
   </div>

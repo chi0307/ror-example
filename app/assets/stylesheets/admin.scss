@@ -8,6 +8,39 @@
     width: 100%;
     position: relative;
   }
+
+  &-jobs {
+    .list-item {
+      position: relative;
+      cursor: default;
+    }
+
+    .modify-item {
+      height: 100%;
+      margin-right: 78px;
+      cursor: pointer;
+    }
+
+    .list-item .fa-trash-alt {
+      padding: 24px;
+      font-size: 30px;
+      right: 40px;
+      top: 0;
+      position: absolute;
+
+      &:hover {
+        color: red;
+      }
+
+      a {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
 }
 
 .add-job {

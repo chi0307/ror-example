@@ -33,11 +33,18 @@ class Admin::JobsController < Admin::AdminController
     @job.company_benefits = params[:job][:company_benefits]
     @job.salary_range = params[:job][:salary_range]
     @job.is_open = params[:job][:is_open]
+
     if @job.save
       redirect_to '/admin'
     else
       render :edit
     end
-    
+  end
+
+  def destroy
+    @job = Job.find(params[:id])
+    @job.destroy
+
+    redirect_to '/admin'
   end
 end
