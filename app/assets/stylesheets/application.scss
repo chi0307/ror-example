@@ -54,6 +54,7 @@ p {
 .profile {
   display: flex;
   flex-direction: column;
+  position: relative;
 
   &-title {
     margin-bottom: 10px;

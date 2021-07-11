@@ -1,0 +1,29 @@
+<%= form_for @job, :url => admin_job_path, method: :patch  do |form| %>
+  <div class="profile">
+    <div class="job-status-block">
+      <p class="text">職缺狀態</p>
+      <div class="toggle-button">
+        <label class="button">開啟
+          <%= form.radio_button :is_open, true %>
+          <div class="checkmark">開啟</div>
+        </label>
+        <label class="button">關閉
+          <%= form.radio_button :is_open, false %>
+          <div class="checkmark">關閉</div>
+        </label>
+      </div>
+    </div>
+    <p class="profile-title"><%= @job.title %></p>
+    <p class="detail detail-description">工作內容</p>
+    <%= form.text_area :content, class: 'detail detail-content detail-edit' %><br>
+    <p class="detail detail-description">條件要求</p>
+    <%= form.text_area :condition_requirements, class: 'detail detail-content detail-edit' %><br>
+    <p class="detail detail-description">公司福利</p>
+    <%= form.text_area :company_benefits, class: 'detail detail-content detail-edit' %><br>
+    <p class="detail detail-description">薪資範圍</p>
+    <%= form.text_area :salary_range, class: 'detail detail-content detail-edit' %><br>
+    <div class="apply-block">
+      <button type="submit" class="button" >存擋</button>
+    </div>
+  </div>
+<% end %>

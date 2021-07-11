@@ -10,4 +10,11 @@ Rails.application.routes.draw do
 
   get '/admin', to: 'admin#index'
   get '/admin/company', to: 'admin#edit'
+
+  namespace :admin do
+    # resources :jobs
+    get '/jobs/:id', to: 'jobs#edit', as: 'job'
+    # get '/jobs/new', to: 'jobs@new'
+    patch '/jobs/:id', to: 'jobs#update'
+  end
 end
