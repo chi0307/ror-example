@@ -4,6 +4,26 @@ class Admin::JobsController < Admin::AdminController
   end
 
   def new
+    @job = Job.new
+    @job.company_id = 1
+  end
+
+  def create
+    @job = Job.new(
+      title: params[:job][:title],
+      content: params[:job][:content],
+      condition_requirements: params[:job][:condition_requirements],
+      company_benefits: params[:job][:company_benefits],
+      salary_range: params[:job][:salary_range],
+      is_open: params[:job][:is_open].to_s == "true",
+      company_id: params[:job][:company_id].to_f
+    )
+
+    if @job.save
+      redirect_to '/admin'
+    else
+      render :new
+    end
   end
 
   def update
@@ -13,8 +33,11 @@ class Admin::JobsController < Admin::AdminController
     @job.company_benefits = params[:job][:company_benefits]
     @job.salary_range = params[:job][:salary_range]
     @job.is_open = params[:job][:is_open]
-    @job.save
-
-    redirect_to '/admin'
+    if @job.save
+      redirect_to '/admin'
+    else
+      render :edit
+    end
+    
   end
 end

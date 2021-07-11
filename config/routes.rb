@@ -13,8 +13,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     # resources :jobs
+    get '/jobs/new', to: 'jobs#new'
+    post '/jobs/new', to: 'jobs#create', as: 'job_new'
     get '/jobs/:id', to: 'jobs#edit', as: 'job'
-    # get '/jobs/new', to: 'jobs@new'
     patch '/jobs/:id', to: 'jobs#update'
   end
 end
