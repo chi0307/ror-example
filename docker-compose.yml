@@ -9,13 +9,11 @@ services:
     ports:
       - 5432:5432
       - 3000:3000
-    volumes:
-      - /Users/junchiwang/Desktop/Project/docker/postgres:/var/lib/postgresql/data
     network_mode: bridge
   ruby:
     container_name: ruby_project
     build: .
-    command: sh -c "bundle install && rm -f tmp/pids/server.pid && rails server -b 0.0.0.0"
+    command: sh -c "bundle install && yarn && rails db:migrate && rm -f tmp/pids/server.pid && rails server -b 0.0.0.0"
     volumes:
       - .:/usr/src/app
     env_file:
