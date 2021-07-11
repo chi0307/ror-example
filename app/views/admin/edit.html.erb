@@ -1,14 +1,16 @@
-<div class="profile">
-  <p class="profile-title"><%= @company.title %></p>
-    <p class="detail detail-description">公司介紹</p>
-    <textarea class="detail detail-content detail-edit"><%= @company.profile %></textarea>
-    <p class="detail detail-description">公司理念</p>
-    <textarea class="detail detail-content detail-edit"><%= @company.philosophy %></textarea>
-    <p class="detail detail-description">媒體報導</p>
-    <textarea class="detail detail-content detail-edit"><%= @company.media_reports %></textarea>
-    <p class="detail detail-description">薪資福利</p>
-    <textarea class="detail detail-content detail-edit"><%= @company.salary_benefits %></textarea>
-</div>
-<div class="apply-block">
-  <button class="button" onclick="location.href='/companies/<%= @company.id %>'">存擋</button>
-</div>
+<%= form_for @company, :url => admin_edit_path, method: :patch  do |form| %>
+  <div class="profile">
+    <p class="profile-title"><%= @company.title %></p>
+      <p class="detail detail-description">公司介紹</p>
+      <%= form.text_area :profile, class: 'detail detail-content detail-edit' %><br>
+      <p class="detail detail-description">公司理念</p>
+      <%= form.text_area :philosophy, class: 'detail detail-content detail-edit' %><br>
+      <p class="detail detail-description">媒體報導</p>
+      <%= form.text_area :media_reports, class: 'detail detail-content detail-edit' %><br>
+      <p class="detail detail-description">薪資福利</p>
+      <%= form.text_area :salary_benefits, class: 'detail detail-content detail-edit' %><br>
+  </div>
+  <div class="apply-block">
+    <button type="submit" class="button" >存擋</button>
+  </div>
+<% end %>
